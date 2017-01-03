@@ -8,7 +8,7 @@ public class JogoDaForca {
         do {
 
             System.out.println(" * Bem vindo ao JOGO DA FORCA * ");
-            // ARRAY CONTENDO AS PALAVRAS
+            // ARRAY DAS PALAVRAS
             String array[] = {
             		"java", "sistema", "informacao", "programacao", "html", "tecnologia", "double", "algoritimo", "programacao", "inteiro", "php",
                     "software", "eclipse", "site"};
@@ -19,7 +19,7 @@ public class JogoDaForca {
             System.out.println("Dica: a palavra contém " + TamanhoPalavras + " letras e está relacionada com informática.");
             System.out.println("\n\n\n");
 
-            // variavel indica que o jogo esta verdadeiro ( esta valendo )
+            // variavel indica que o jogo esta verdadeiro
             boolean jogo = true;
             do {
                 // array que contem as letras sorteadas
@@ -28,10 +28,10 @@ public class JogoDaForca {
                     letras[x] = palavra.charAt(x);
                     System.out.print(" _ ");
                 }
-                // booleado tentivas (true) permite que o usuario coloque as letras.
+                // boolear tentivas (true) permite que o usuario coloque as letras.
                 boolean tentativas = true;
                 int erro = 0;
-                // array para armazenamento das letras corretas (as que o jogador digita e estão na palavra sorteada)
+                // array para armazenamento das letras corretas
                 char letraCorreta[] = new char[TamanhoPalavras];
                 while (tentativas) {
                     if (erro < 3) {
@@ -71,7 +71,7 @@ public class JogoDaForca {
                         if (palavra.equals(PalavraNova)) {
                             System.out.println("\n\n Voce acertou , a palara é :  '" + palavra + "'.");
                             tentativas = false;
-                        } else {//numero de tentaivas para cada erro
+                        } else { //numero de tentaivas para cada erro
                             if (erro == 0) {} 
                             else if (erro == 1) {} 
                             else if (erro == 2) {} 
@@ -87,13 +87,13 @@ public class JogoDaForca {
                 jogo = false;
             } while (jogo);
 
-            // mensagem se o jogador quer ogar novamente
+            // mensagem se o jogador quer jogar novamente
             System.out.println("\nIniciar uma nova Partida  ? ('S' para jogar e 'N' para não jogar)?");
 
             char jogarNovamente = entrada.next().charAt(0);
             if (jogarNovamente == 'S' || jogarNovamente == 's') {
-                jogar = true;//caso queira jogar novamente .
-            } else {//caso digite nao ele fecha o jogo e manda a mensagem
+                jogar = true; //caso queira jogar novamente .
+            } else { //caso introduza nao ele fecha o jogo e manda a mensagem
                 jogar = false;
                 System.out.println("\n  THE END GAME   \n");
             }
